@@ -6,7 +6,13 @@
   </router-link>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onBeforeRouteLeave } from 'vue-router'
+
+onBeforeRouteLeave((to, from) => {
+  console.log('aaa')
+})
+</script>
 
 <style scoped>
 h1 {
