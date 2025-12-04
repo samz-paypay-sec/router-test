@@ -9,8 +9,11 @@
 <script setup lang="ts">
 import { onBeforeRouteLeave } from 'vue-router'
 
-onBeforeRouteLeave((to, from) => {
-  console.log('aaa')
+onBeforeRouteLeave((_to, from) => {
+  const title = from.meta.title
+  if (typeof title === 'string') {
+    document.title = title + '　'
+  }
 })
 </script>
 
